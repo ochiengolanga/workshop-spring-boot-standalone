@@ -28,6 +28,9 @@ public class BootStandaloneApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
+			riderRepository.deleteAll();
+			teamRepository.deleteAll();
+
 			Stream.of("Yamaha Factory", "Ducati Factory", "Suzuki Factory", "KTM", "Honda Racing", "Tech3 Yamaha")
 					.forEach(teamName -> teamRepository.save(new Team(teamName)));
 

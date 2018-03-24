@@ -21,16 +21,23 @@ public class Rider implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "rider_id")
     private Long id;
 
     @Version
+    @Column(name = "rider_version")
     private Long version;
 
     @NotNull(message = "Rider name must be specified")
+    @Column(name = "rider_name", nullable = false, unique = true)
     private String riderName;
 
     @NotNull(message = "Rider number must be specified")
+    @Column(name = "rider_number", nullable = false, unique = true, updatable = false)
     private int number;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rider_skilllevel")
     private RiderSkillLevel skillLevel;
 
     @ManyToOne

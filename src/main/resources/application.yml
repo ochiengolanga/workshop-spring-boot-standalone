@@ -12,3 +12,6 @@ spring:
     url: jdbc:postgresql://172.17.0.4:5432/motogp
     username: postgres
     password: postgres
+  security:
+    user:
+      password: password

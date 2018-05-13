@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://172.17.0.5:3306/motogp
+    username: root
+    password: password

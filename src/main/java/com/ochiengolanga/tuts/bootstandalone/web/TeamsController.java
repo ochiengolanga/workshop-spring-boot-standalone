@@ -4,6 +4,7 @@ import com.ochiengolanga.tuts.bootstandalone.domains.Rider;
 import com.ochiengolanga.tuts.bootstandalone.domains.Team;
 import com.ochiengolanga.tuts.bootstandalone.repository.RiderRepository;
 import com.ochiengolanga.tuts.bootstandalone.repository.TeamRepository;
+import com.ochiengolanga.tuts.bootstandalone.services.TeamService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,11 +15,14 @@ public class TeamsController {
 
     private final RiderRepository riderRepository;
     private final TeamRepository teamRepository;
+    private final TeamService teamService;
 
     public TeamsController(RiderRepository riderRepository,
-                           TeamRepository teamRepository) {
+                           TeamRepository teamRepository,
+                           TeamService teamService) {
         this.riderRepository = riderRepository;
         this.teamRepository = teamRepository;
+        this.teamService = teamService;
     }
 
     @PostMapping
@@ -28,7 +32,7 @@ public class TeamsController {
 
     @GetMapping
     public List<Team> getTeams() {
-        return teamRepository.findAll();
+        return teamService.fetchTeams();
     }
 
     @GetMapping("/{teamId}")

@@ -1,2 +1,7 @@
-// https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
-testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.5.2.jre9-preview'
+______             _    ______
+| ___ \           | |   | ___ \
+| |_/ / ___   ___ | |_  | |_/ /____      _____ _ __
+| ___ \/ _ \ / _ \| __| |  __/ _ \ \ /\ / / _ \ '__|
+| |_/ / (_) | (_) | |_  | | | (_) \ V  V /  __/ |
+\____/ \___/ \___/ \__| \_|  \___/ \_/\_/ \___|_|
+
